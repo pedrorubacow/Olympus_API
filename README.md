@@ -1,6 +1,6 @@
 # Olympus API
 
-Catálogo interativo de mitologia grega, com quiz e árvore genealógica dos deuses.
+Catálogo de mitologia grega — deuses, criaturas, mitos e um quiz sobre eles.
 Projeto de estudo do DevOps Roadmap 2026.
 
 ## Domínio de dados

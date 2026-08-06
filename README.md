@@ -1,6 +1,6 @@
 # Olympus API
 
-Catálogo de mitologia grega — deuses, criaturas, mitos e um quiz sobre eles.
+Catálogo de mitologia grega — deuses, criaturas, mitos e curiosidades.
 Projeto de estudo do DevOps Roadmap 2026.
 
 ## Domínio de dados

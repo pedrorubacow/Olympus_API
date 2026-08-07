@@ -19,3 +19,22 @@ class God(db.Model):
             'parent_id': self.parent_id,
             'spouse_id': self.spouse_id,
         }
+
+
+class Creature(db.Model):
+    __tablename__ = 'creatures'
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    type = db.Column(db.String(100))
+    powers = db.Column(db.Text)
+    defeated_by = db.Column(db.String(100))
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'type': self.type,
+            'powers': self.powers,
+            'defeated_by': self.defeated_by,
+        }

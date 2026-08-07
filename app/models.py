@@ -38,3 +38,33 @@ class Creature(db.Model):
             'powers': self.powers,
             'defeated_by': self.defeated_by,
         }
+myth_gods = db.Table('myth_gods',
+    db.Column('myth_id', db.Integer, db.ForeignKey('myths.id'), primary_key=True),
+    db.Column('god_id', db.Integer, db.ForeignKey('gods.id'), primary_key=True)
+)
+
+myth_creatures = db.Table('myth_creatures',
+    db.Column('myth_id', db.Integer, db.ForeignKey('myths.id'), primary_key=True),
+    db.Column('creature_id', db.Integer, db.ForeignKey('creatures.id'), primary_key=True)
+)
+
+class Myth(db.Model):
+    __tablename__ = 'myths'
+
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(200), nullable=False)
+    summary = db.Column(db.Text)
+    location = db.Column(db.String(100))
+
+    gods = db.relationship('God', secondary=myth_gods, backref='myths')
+    creatures = db.relationship('Creature', secondary=myth_creatures, backref='myths')
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'title': self.title,
+            'summary': self.summary,
+            'location': self.location,
+            'god_ids': [g.id for g in self.gods],
+            'creature_ids': [c.id for c in self.creatures],
+        }    

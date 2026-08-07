@@ -11,8 +11,10 @@ def create_app():
 
     from app.routes.gods import gods_bp
     from app.routes.creatures import creatures_bp
+    from app.routes.myths import myths_bp
     app.register_blueprint(gods_bp)
     app.register_blueprint(creatures_bp)
+    app.register_blueprint(myths_bp)
 
     with app.app_context():
         db.create_all()

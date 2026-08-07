@@ -30,5 +30,7 @@ log_info "Ativando ambiente virtual..."
 # shellcheck disable=SC1091
 source venv/bin/activate
 
-log_info "Iniciando a aplicacao... (placeholder ate a Fase 3)"
-echo "TODO: substituir por 'flask run' quando app/ existir"
+export FLASK_APP=app.py
+export FLASK_RUN_HOST=0.0.0.0
+log_info "Iniciando a aplicacao em http://0.0.0.0:5000 ..."
+flask run

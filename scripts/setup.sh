@@ -44,6 +44,7 @@ log_info "Criando ambiente virtual..."
 python3 -m venv venv
 
 log_info "Ativando ambiente virtual..."
+# shellcheck disable=SC1091
 source venv/bin/activate
 
 log_info "Instalando dependencias..."

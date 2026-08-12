@@ -7,7 +7,7 @@ Type=simple
 User=ubuntu
 WorkingDirectory=/home/ubuntu/olympus-api
 Environment="FLASK_APP=app.py"
-Environment="FLASK_RUN_HOST=0.0.0.0"
+Environment="FLASK_RUN_HOST=127.0.0.1"
 ExecStart=/home/ubuntu/olympus-api/venv/bin/flask run
 Restart=on-failure
 RestartSec=3

@@ -1,0 +1,17 @@
+[Unit]
+Description=Olympus API Flask Service (porta %i)
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/olympus-api
+Environment="FLASK_APP=app.py"
+Environment="FLASK_RUN_HOST=127.0.0.1"
+Environment="FLASK_RUN_PORT=%i"
+ExecStart=/home/ubuntu/olympus-api/venv/bin/flask run
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
